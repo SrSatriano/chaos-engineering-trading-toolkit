@@ -17,8 +17,7 @@ func (r *Runner) Run(name string, d time.Duration) error {
 		fmt.Printf("[chaos] simulating database unavailable for %s\n", d)
 	case "broker_outage":
 		fmt.Printf("[chaos] broker API returning 503 for %s\n", d)
-		// TODO: tc netem, docker pause, mock server
-	default:
+			default:
 		return fmt.Errorf("unknown experiment: %s", name)
 	}
 	time.Sleep(d)
